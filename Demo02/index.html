@@ -1,0 +1,38 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<script src="../build/react.development.js"></script>
+    <script src="../build/react-dom.development.js"></script>
+    <script src="../build/babel.min.js"></script>
+</head>
+<body>
+	<div id="reactD2"></div>
+</body>
+<script type = "text/babel">
+	const name = "Tim Duncan";
+	//const element = <h1>Hello , {name}</h1>;
+	
+	function formatName(user){
+		return user.firstName +' ' + user.lastName;
+	}
+	const user = {
+		firstName : "Time",
+		lastName : "Duncan"
+	};
+	//
+	const element = (
+	);
+	//
+	
+	ReactDOM.render(
+		element,
+		document.getElementById('reactD2')
+	);
+	const e2 = (
+		<h1 className="greeting">
+		Hello, world!
+		</h1>
+	);
+</script>
+</html>
