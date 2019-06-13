@@ -1,0 +1,45 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<script src="../build/react.development.js"></script>
+    <script src="../build/react-dom.development.js"></script>
+    <script src="../build/babel.min.js"></script>
+</head>
+<body>
+	<div id="root"></div>
+	<button onclick="tick()">click me</button>
+</body>
+<script type = "text/babel">
+//element代表着元素，React中元素是不可变的，因而都用const定义
+
+//计时器例子
+	function tick() {
+		  const element = (
+			<div>
+			  <h1>Hello, world!</h1>
+			  <h2>It is {new Date().toLocaleTimeString()}.</h2>
+			</div>
+		  );
+		  ReactDOM.render(element, document.getElementById('root'));
+		}
+	//setInterval(tick, 1000);
+	
+//函数作为最简单的组件，组件必须以大写字母开头
+	function Welcome(props) {
+		return <h1>Hello, {props.name}</h1>;
+	}
+//以上写法等同于以下写法
+	/*class Welcome extends React.Component{
+		render(){
+			return <h1>Hello, {this.props.name}</h1>;
+		}
+	}*/
+	var tony = {
+		'name':"Tony"
+	};
+	const element2 = <Welcome name="Tony"/>;
+	ReactDOM.render(element2,document.getElementById('root'));
+
+</script>
+</html>
