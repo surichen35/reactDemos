@@ -40,6 +40,20 @@
 	};
 	const element2 = <Welcome name="Tony"/>;
 	ReactDOM.render(element2,document.getElementById('root'));
+	
+//组件组合
+
+	class App extends React.Component{
+		render(){
+			return <div>
+				<Welcome name="lala"/>
+				<Welcome name="xixi"/>
+				</div>
+		}
+	}
+	ReactDOM.render(<App/>,document.getElementById('root'));
+
+
 
 </script>
 </html>
