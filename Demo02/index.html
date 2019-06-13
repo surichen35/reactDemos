@@ -8,31 +8,47 @@
 </head>
 <body>
 	<div id="reactD2"></div>
+	<div id = "reactD2_test"></div>
 </body>
 <script type = "text/babel">
+
+//同个html页面可以有两个ReactDom,通过不同组件渲染页面
 	const name = "Tim Duncan";
-	//const element = <h1>Hello , {name}</h1>;
-	
-	function formatName(user){
-		return user.firstName +' ' + user.lastName;
-	}
+
 	const user = {
 		firstName : "Time",
 		lastName : "Duncan"
 	};
-	//
-	const element = (
-	);
-	//
 	
+//可以在element中插入有效的javascript代码
+	function formatName(user){
+		return user.firstName +' ' + user.lastName;
+	}
+	
+	/*const element = React.createElement(
+		'h1',
+		{className: 'greeting'},
+		'Hello, world!'
+	);*/
+	
+//以下代码等同于以上注释代码
+	const element = (
+	<h1>
+		Hello, {name}
+	</h1>
+	);
 	ReactDOM.render(
 		element,
 		document.getElementById('reactD2')
 	);
 	const e2 = (
 		<h1 className="greeting">
-		Hello, world!
+		{formatName(user)}!
 		</h1>
+	);
+	ReactDOM.render(
+		e2,
+		document.getElementById('reactD2_test')
 	);
 </script>
 </html>
