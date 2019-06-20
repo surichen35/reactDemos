@@ -1,0 +1,52 @@
+<!DOCTYPE>
+<!--
+	author suri.chen
+	20/06/2019
+	Reference: React Standard Document
+-->
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<script src="../build/react.development.js"></script>
+    <script src="../build/react-dom.development.js"></script>
+    <script src="../build/babel.min.js"></script>
+</head>
+<body>
+	<div id="root"></div>
+</body>
+<script type = "text/babel">
+	/*function Clock(props){
+		return (
+				<div>
+					<h1>Hello, World!</h1>
+					<h2>It is {props.date.toLocaleTimeString()}. now</h2>
+				</div>
+			);
+	}*/
+	
+	class Clock extends React.Component{
+		constructor(props){
+			super(props);
+			this.state = {date: new Date()};
+		}
+
+		componentDidMount(){}
+		componentWillUnMount(){}
+		render(){
+			return (
+					<div>
+						<h1>Hello, World!</h1>
+						<h2>It is {this.state.date.toLocaleTimeString()}. now</h2>
+					</div>
+				)
+		}
+	}
+	function tick(){
+		ReactDOM.render(
+				<Clock date = {new Date()} />,
+				document.getElementById('root')
+			);
+	}
+	setInterval(tick,1000);
+</script>
+</html>	
